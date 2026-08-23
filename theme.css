@@ -6,20 +6,8 @@
   --font-mono: "Geist Mono", monospace;
 }
 
-.theme-light {
-  --color-base-00: #ffffff;
-  --color-base-05: #fcfcfc;
-  --color-base-10: #fafafa;
-  --color-base-20: #f6f6f6;
-  --color-base-25: #efefef;
-  --color-base-30: #e4e4e4;
-  --color-base-35: #dadada;
-  --color-base-40: #bdbdbd;
-  --color-base-50: #ababab;
-  --color-base-60: #707070;
-  --color-base-70: #5c5c5c;
-  --color-base-100: #222222;
-
+.theme-light,
+.theme-dark {
   --color-red: #ec2b2e;
   --color-orange: #ec7500;
   --color-yellow: #f3ab12;
@@ -38,6 +26,7 @@ body {
   /* Content */
   --line-height-normal: 1.6;
   --line-height-heading: 1.2;
+  --table-line-height: var(--line-height-normal);
 
   --p-spacing: 16px;
   --list-item-spacing: 4px;
@@ -66,11 +55,10 @@ body {
   --link-external-decoration: none !important;
   --link-external-decoration-hover: underline;
 
-  --code-background: var(--color-base-25);
+  --code-background: var(--color-base-10);
   --code-white-space: 24px;
   --code-border-radius: 4px;
-  --code-border-width: 1px;
-  --code-border-color: var(--color-base-30);
+  --code-border-width: 0px;
 
   /* UI */
   --divider-color: transparent;
@@ -150,6 +138,81 @@ a,
   border-bottom: 1px solid var(--color-base-30);
 }
 
+/* Table */
+.cm-html-embed thead tr>th:first-child,
+.markdown-rendered thead tr>th:first-child,
+.cm-html-embed thead tr>th:last-child,
+.cm-html-embed thead tr>th,
+.markdown-rendered thead tr>th,
+.cm-html-embed th,
+.markdown-rendered th,
+.markdown-rendered thead tr>th:last-child,
+.cm-html-embed tbody tr>td:first-child,
+.markdown-rendered tbody tr>td:first-child,
+.cm-html-embed tbody tr>td:last-child,
+.markdown-rendered tbody tr>td:last-child,
+.cm-html-embed td,
+.markdown-rendered td,
+.cm-html-embed tbody tr:last-child>td,
+.markdown-rendered tbody tr:last-child>td,
+td {
+  border-left-width: 0;
+  border-right-width: 0;
+  border-top-width: 0;
+}
+
+thead,
+.table-wrapper thead {
+  background-color: var(--color-base-10);
+}
+
+.el-table th,
+th .table-cell-wrapper {
+  font-family: var(--font-sans);
+  color: var(--color-base-70);
+}
+
+.table-cell-wrapper {
+  margin: 8px;
+}
+
+.el-table th,
+.el-table td {
+  padding: 16px;
+}
+
+/* Highlight */
+.markdown-rendered mark,
+.cm-s-obsidian span.cm-formatting-highlight,
+.cm-s-obsidian span.cm-highlight {
+  background-color: transparent;
+  text-decoration: underline;
+  text-decoration-thickness: 2px;
+  text-decoration-color: var(--color-yellow);
+  text-underline-offset: 2px;
+  padding: 0 2px;
+}
+
+/* Blockquote */
+
+.cm-line.cm-active.HyperMD-quote.HyperMD-quote-1 {
+  text-indent: -18px;
+}
+
+.markdown-source-view.mod-cm6.is-live-preview .HyperMD-quote {
+  text-indent: -20px;
+}
+
+.cm-line.HyperMD-quote.HyperMD-quote-1 {
+  padding-inline-start: 20px !important;
+}
+
+.markdown-rendered blockquote,
+.markdown-source-view.mod-cm6.is-live-preview .HyperMD-quote:before,
+.markdown-source-view.mod-cm6 .cm-blockquote-border:before {
+  border-inline-start-color: var(--color-base-30);
+}
+
 /* Inline code */
 pre code,
 code,
@@ -161,6 +224,13 @@ code,
   background: var(--color-base-25);
   border-radius: 4px;
   border: solid 1px var(--color-base-30);
+}
+
+/* Wrap code when exporting PDF */
+@media print {
+  code[class*='language-'] {
+    white-space: pre-wrap !important;
+  }
 }
 
 /* Hide vault name unless hovered */
