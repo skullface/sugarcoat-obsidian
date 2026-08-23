@@ -292,3 +292,14 @@ body:not(.show-sidebar-header-buttons) :is(.mod-left-split, .mod-right-split) .w
   transition: var(--anim-duration-moderate);
   transition-delay: var(--transition-delay-passing-over-protection)
 }
+
+/* Sidebar */
+.tree-item-self.mod-collapsible {
+  font-weight: 600;
+}
+
+.nav-file-title,
+.nav-folder-title {
+  font-size: 12px;
+  font-family: var(--font-mono);
+}
