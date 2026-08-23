@@ -1,0 +1,224 @@
+@import url('https://fonts.googleapis.com/css2?family=Figtree:ital,wght@0,300..900;1,300..900&family=Geist+Mono:ital,wght@0,100..900;1,100..900&family=Source+Serif+4:ital,opsz,wght@0,8..60,200..900;1,8..60,200..900&display=swap');
+
+:root {
+  --font-sans: "Figtree", "Inter", "Geist", sans-serif;
+  --font-serif: "Source Serif 4", Georgia, serif;
+  --font-mono: "Geist Mono", monospace;
+}
+
+.theme-light {
+  --color-base-00: #ffffff;
+  --color-base-05: #fcfcfc;
+  --color-base-10: #fafafa;
+  --color-base-20: #f6f6f6;
+  --color-base-25: #efefef;
+  --color-base-30: #e4e4e4;
+  --color-base-35: #dadada;
+  --color-base-40: #bdbdbd;
+  --color-base-50: #ababab;
+  --color-base-60: #707070;
+  --color-base-70: #5c5c5c;
+  --color-base-100: #222222;
+
+  --color-red: #ec2b2e;
+  --color-orange: #ec7500;
+  --color-yellow: #f3ab12;
+  --color-green: #82c507;
+  --color-cyan: #0abdc7;
+  --color-blue: #1fbff4;
+  --color-purple: #b76de8;
+  --color-pink: #ea6cbc;
+
+  --caret-color: var(--color-accent);
+  --text-selection: var(--color-accent);
+  --text-highlight-bg: var(--color-accent);
+}
+
+body {
+  /* Content */
+  --line-height-normal: 1.6;
+  --line-height-heading: 1.2;
+
+  --p-spacing: 16px;
+  --list-item-spacing: 4px;
+  --list-indent-editing: 2px;
+
+  --h1-font: var(--font-mono);
+  --h2-font: var(--font-sans);
+  --h3-font: var(--font-sans);
+  --h4-font: var(--font-sans);
+
+  --h1-size: 1em;
+  --h1-weight: 450;
+  --h2-size: 2.25em;
+  --h2-weight: 550;
+  --h3-size: 1.75em;
+  --h3-weight: 550;
+  --h4-weight: 600;
+
+  --link-color: inherit;
+  --link-color-hover: var(--text-accent);
+  --link-decoration: none !important;
+  --link-decoration-hover: underline;
+  --link-unresolved-color: inherit;
+  --link-external-color: inherit;
+  --link-external-color-hover: var(--text-accent);
+  --link-external-decoration: none !important;
+  --link-external-decoration-hover: underline;
+
+  --code-background: var(--color-base-25);
+  --code-white-space: 24px;
+  --code-border-radius: 4px;
+  --code-border-width: 1px;
+  --code-border-color: var(--color-base-30);
+
+  /* UI */
+  --divider-color: transparent;
+  --divider-color-hover: var(--background-modifier-border);
+
+  --nav-item-radius: 4px;
+  --nav-item-padding: calc(var(--size-4-1) + 1px) var(--size-4-2) calc(var(--size-4-1) + 1px) var(--size-4-6);
+  --search-icon-size: 14px;
+  --header-height: 48px;
+
+  --scrollbar-thumb-bg: var(--background-modifier-border);
+  --scrollbar-active-thumb-bg: var(--background-modifier-border-hover);
+
+  --titlebar-background: var(--background-secondary);
+  --titlebar-background-focused: var(--background-secondary);
+  --titlebar-text-color: var(--color-base-60);
+  --titlebar-text-color-focused: var(--color-base-70);
+
+  --tab-background-active: var(--color-base-00);
+  --tab-text-color: var(--text-faint);
+  --tab-text-color-active: var(--text-muted);
+  --tab-text-color-focused: var(--text-muted);
+  --tab-text-color-focused-active: var(--text-muted);
+  --tab-text-color-focused-highlighted: var(--text-accent);
+  --tab-text-color-focused-active-current: var(--text-normal);
+  --tab-container-background: var(--background-secondary);
+  --tab-divider-color: transparent;
+}
+
+/* Link text */
+a,
+.markdown-source-view .cm-link {
+  font-family: var(--font-mono) !important;
+  font-size: 14px;
+  font-weight: 500;
+}
+
+/* Expanded link URL */
+.markdown-source-view .cm-url {
+  font-family: var(--font-mono) !important;
+  font-weight: 400;
+  font-size: 14px;
+  opacity: 0.7;
+}
+
+.external-link {
+  background-image: none;
+  padding-right: 0px;
+}
+
+/* Expandable indicator */
+.cm-fold-indicator {
+  left: -4px;
+}
+
+.markdown-source-view.mod-cm6 .cm-indent::before {
+  height: 0px;
+}
+
+/* Heading spacing */
+.cm-contentContainer .cm-line.HyperMD-header {
+  padding-top: 8px;
+  padding-bottom: 8px;
+  letter-spacing: -0.02em;
+}
+
+/* List item spacing */
+.cm-line.HyperMD-list-line {
+  padding-bottom: var(--list-item-spacing) !important;
+}
+
+/* Document title */
+.inline-title {
+  text-transform: uppercase;
+  padding-bottom: 8px;
+  margin-bottom: 24px;
+  border-bottom: 1px solid var(--color-base-30);
+}
+
+/* Inline code */
+pre code,
+code,
+.cm-html-embed.cm-embed-block pre code,
+.cm-s-obsidian .cm-inline-code:not(.cm-formatting),
+.cm-s-obsidian code:not(pre code),
+.markdown-rendered code:not(pre code) {
+  color: var(--color-base-100);
+  background: var(--color-base-25);
+  border-radius: 4px;
+  border: solid 1px var(--color-base-30);
+}
+
+/* Hide vault name unless hovered */
+.workspace-sidedock-vault-profile {
+  opacity: 0;
+  transition: var(--anim-duration-moderate);
+}
+
+.workspace-sidedock-vault-profile:hover {
+  opacity: 1;
+}
+
+/* Hide sidebar button(s) */
+.sidebar-toggle-button.mod-right,
+.sidebar-toggle-button.mod-left {
+  display: none;
+}
+
+.mod-macos.is-hidden-frameless:not(.is-popout-window) .workspace .workspace-tabs.mod-top-right-space .workspace-tab-header-container {
+  padding-right: 4px;
+}
+
+/* Hide file nav header */
+.workspace-leaf-content[data-type=file-explorer] .nav-header {
+  display: none;
+}
+
+/* Hide top bar unless hovered */
+.nav-file-title,
+.nav-folder-title {
+  border-radius: 0;
+  margin-top: 0;
+  margin-bottom: 0
+}
+
+body:not(.show-sidebar-header-buttons) :is(.mod-left-split, .mod-right-split) :is(.workspace-tab-header-container, .workspace-tab-header-container-inner) {
+  transition: var(--anim-duration-moderate);
+}
+
+body:not(.show-sidebar-header-buttons) :is(.mod-left-split, .mod-right-split) .workspace-tabs.mod-top .workspace-tab-header-container:not(:hover) .workspace-tab-header-container-inner {
+  opacity: 0
+}
+
+.workspace-split.mod-left-split .workspace-sidedock-vault-profile,
+.workspace-tab-header-new-tab,
+.workspace-tab-header:only-child .workspace-tab-header-inner-close-button,
+.mod-stacked .workspace-tab-header .workspace-tab-header-inner-close-button,
+.workspace-tab-header-inner-close-button,
+.workspace-tab-header-tab-list,
+.mod-root .workspace-tab-header-container:not(:has(.workspace-tab-header+.workspace-tab-header)) {
+  display: none;
+}
+
+/* Status bar */
+.status-bar {
+  font-family: var(--font-mono);
+  border-top: 1px solid var(--color-base-25);
+  border-left: 1px solid var(--color-base-25);
+  transition: var(--anim-duration-moderate);
+  transition-delay: var(--transition-delay-passing-over-protection)
+}
