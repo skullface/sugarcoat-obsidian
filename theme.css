@@ -69,9 +69,6 @@ body {
   --search-icon-size: 14px;
   --header-height: 48px;
 
-  --scrollbar-thumb-bg: var(--background-modifier-border);
-  --scrollbar-active-thumb-bg: var(--background-modifier-border-hover);
-
   --titlebar-background: var(--background-secondary);
   --titlebar-background-focused: var(--background-secondary);
   --titlebar-text-color: var(--color-base-60);
@@ -194,7 +191,6 @@ th .table-cell-wrapper {
 }
 
 /* Blockquote */
-
 .cm-line.cm-active.HyperMD-quote.HyperMD-quote-1 {
   text-indent: -18px;
 }
@@ -231,6 +227,15 @@ code,
   code[class*='language-'] {
     white-space: pre-wrap !important;
   }
+}
+
+/* Scrollbar */
+body:not(.styled-scrollbars) {
+  scrollbar-color: var(--color-base-35) transparent !important;
+}
+
+* {
+  scrollbar-width: thin !important;
 }
 
 /* Hide vault name unless hovered */
